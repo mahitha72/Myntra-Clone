@@ -390,20 +390,50 @@ const MobileNavItem = ({ label, children, href }) => {
         }}
       >
         <Text
-          fontWeight={600}
-          color={useColorModeValue("gray.600", "gray.200")}
-          fontSize={{base:12,sm:13,md:15,lg:18}}
-        >{label==="MENS"?<NavLink  to="/mens">
-        {label}
-        </NavLink>:label==="WOMEN"?<NavLink  to="/womens">
-          {label}
-          </NavLink>:label==="KIDS"?<NavLink  to="/kids">
-          {label}
-          </NavLink>:<NavLink  to="*">
-          {label}
-          </NavLink>}
-          
-        </Text>
+  fontWeight={600}
+  color={useColorModeValue("gray.600", "gray.200")}
+  fontSize={{ base: 12, sm: 13, md: 15, lg: 18 }}
+>
+  {label === "MENS" ? (
+    <NavLink to="/mens">{label}</NavLink>
+  ) : label === "WOMEN" ? (
+    <NavLink to="/womens">{label}</NavLink>
+  ) : label === "KIDS" ? (
+    <NavLink to="/kids">{label}</NavLink>
+  ) : label === "WARDROBE" ? (
+    // <NavLink href="https://dressmeapp.streamlit.app/">{label}</NavLink>
+    <a href="https://dressmeapp.streamlit.app/" target="_blank" rel="noopener noreferrer"
+    style={{
+      backgroundColor: "#BB1679",
+      color: "white",
+      padding: "0.5rem 1rem",
+      borderRadius: "5px",
+      textDecoration: "none",
+    }}
+    >
+    {label}</a>
+  ) : (
+    <NavLink to="*">{label}</NavLink>
+  )}
+</Text>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {children && (
           <Icon
             as={ChevronDownIcon}
@@ -760,52 +790,52 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "STUDIO",
+    label: "WARDROBE",
     children: [
       {
-        label: "Galary",
-        subLabel: ["View All Fragrance", "New In", "5 Rated Products"],
-        href: "#",
+        label: "Dress Me Up",
+        subLabel: ["View my Wardrobe ", "Combine Clothes ", "Update Wardrobe ","Daily Planner"],
+        href: "https://dressmeapp.streamlit.app/",
       },
-      {
-        label: "Top Brands",
-        subLabel: [
-          "NEOM Organics",
-          "Glasshouse Fragrances",
-          "KORRES",
-          "NEST Fragrance",
-          "Molton Brown",
-        ],
-        href: "#",
-      },
-      {
-        label: "Deoderants",
-        subLabel: [
-          "Perfume",
-          "EAU de Toilette",
-          "Body Spray",
-          "For Her",
-          "For Him",
-        ],
-        href: "#",
-      },
-      {
-        label: "Ethnic",
-        subLabel: [
-          "Scented Candles",
-          "Diffusers",
-          "Aromatherapy",
-          "Pillow Mists",
-          "Room Sprays",
-        ],
-        href: "#",
-      },
+      // {
+      //   label: "Top Brands",
+      //   subLabel: [
+      //     "NEOM Organics",
+      //     "Glasshouse Fragrances",
+      //     "KORRES",
+      //     "NEST Fragrance",
+      //     "Molton Brown",
+      //   ],
+      //   href: "#",
+      // },
+      // {
+      //   label: "Deoderants",
+      //   subLabel: [
+      //     "Perfume",
+      //     "EAU de Toilette",
+      //     "Body Spray",
+      //     "For Her",
+      //     "For Him",
+      //   ],
+      //   href: "#",
+      // },
+      // {
+      //   label: "Ethnic",
+      //   subLabel: [
+      //     "Scented Candles",
+      //     "Diffusers",
+      //     "Aromatherapy",
+      //     "Pillow Mists",
+      //     "Room Sprays",
+      //   ],
+      //   href: "#",
+      // },
 
-      {
-        label: "Upcoming Fashion",
-        subLabel: ["In Shirts", "In Pants", "Casual", "Watches", "Footwear"],
-        href: "#",
-      },
+      // {
+      //   label: "Upcoming Fashion",
+      //   subLabel: ["In Shirts", "In Pants", "Casual", "Watches", "Footwear"],
+      //   href: "#",
+      // },
     ],
   },
 ];

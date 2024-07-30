@@ -38,6 +38,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCartData } from "../Redux/Cart/Cart.action";
 import NavSearch from "./NavSearch";
+import "../Styles/Products.module.css";
 
 
 export default function FinalNavbar() {
@@ -372,7 +373,7 @@ const MobileNav = () => {
   );
 };
 
-const MobileNavItem = ({ label, children, href }) => {
+const MobileNavItem = ({ label, children, href,id }) => {
   const { isOpen, onToggle } = useDisclosure();
 
   return (
@@ -388,6 +389,7 @@ const MobileNavItem = ({ label, children, href }) => {
           textDecoration: "none",
   
         }}
+        id={id}
       >
         <Text
   fontWeight={600}
@@ -402,15 +404,7 @@ const MobileNavItem = ({ label, children, href }) => {
     <NavLink to="/kids">{label}</NavLink>
   ) : label === "WARDROBE" ? (
     // <NavLink href="https://dressmeapp.streamlit.app/">{label}</NavLink>
-    <a href="https://dressmeapp.streamlit.app/" target="_blank" rel="noopener noreferrer"
-    style={{
-      backgroundColor: "#BB1679",
-      color: "white",
-      padding: "0.5rem 1rem",
-      borderRadius: "5px",
-      textDecoration: "none",
-    }}
-    >
+    <a href="https://dressmeapp.streamlit.app/" target="_blank" rel="noopener noreferrer">
     {label}</a>
   ) : (
     <NavLink to="*">{label}</NavLink>
@@ -790,10 +784,11 @@ const NAV_ITEMS = [
     ],
   },
   {
-    label: "WARDROBE",
+    label: "DRESS ME UP",
+    id: "wardrobe-link", 
     children: [
       {
-        label: "Dress Me Up",
+        label: "WARDROBE MANAGER",
         subLabel: ["View my Wardrobe ", "Combine Clothes ", "Update Wardrobe ","Daily Planner"],
         href: "https://dressmeapp.streamlit.app/",
       },

@@ -85,3 +85,17 @@
 @media screen  and (max-width: 700px) {
 
 }
+/* In your CSS file */
+#wardrobe-link {
+    background-color: #BB1679;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  #wardrobe-link:hover {
+    background-color: #a8136b;
+    color: #f0f0f0;
+  }
+  
